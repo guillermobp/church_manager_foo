@@ -1,0 +1,18 @@
+<div class="card">
+  <div class="card-body">
+    <h3 class="card-title">My Church</h3>
+    <%= form_with model: @church do |form| %>
+      <div class="form-group">
+        <%= form.label :name, class: "form-control-label" %>
+        <%= form.text_field :name, class: "form-control" %>
+      </div>
+
+      <div class="form-group">
+        <%= form.label :address, class: "form-control-label" %>
+        <%= form.text_field :address, class: "form-control" %>
+      </div>
+
+      <%= form.submit %>
+    <% end %>
+  </div>
+</div>
