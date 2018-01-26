@@ -7,10 +7,37 @@
         <%= form.text_field :name, class: "form-control" %>
       </div>
 
-      <div class="form-group">
-        <%= form.label :address, class: "form-control-label" %>
-        <%= form.text_field :address, class: "form-control" %>
-      </div>
+      <%= form.fields_for :address, @church.address do |address| %>
+        <div class="row">
+          <div class="col-6">
+            <div class="form-group">
+              <%= address.label :street_name, class: "form-control-label" %>
+              <%= address.text_field :street_name, class: "form-control" %>
+            </div>
+          </div>
+
+          <div class="col-2">
+            <div class="form-group">
+              <%= address.label :street_number, class: "form-control-label" %>
+              <%= address.text_field :street_number, class: "form-control" %>
+            </div>
+          </div>
+
+          <div class="col-2">
+            <div class="form-group">
+              <%= address.label :country, class: "form-control-label" %>
+              <%= address.collection_select :country, Country.all, :id, :name, {}, { class: "form-control" } %>
+            </div>
+          </div>
+
+          <div class="col-2">
+            <div class="form-group">
+              <%= address.label :country_administrative_level, @first_level_name, class: "form-control-label" %>
+              <%= address.collection_select :country_administrative_level, CountryAdministrativeLevel.where(country: 1, first_level_id: nil), :id, :name, {}, { class: "form-control" } %>
+            </div>
+          </div>
+        </div>
+      <% end %>
 
       <%= form.submit %>
     <% end %>
