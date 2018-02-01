@@ -29,6 +29,7 @@ ActiveRecord::Schema.define(version: 20180126015916) do
 
   create_table "churches", force: :cascade do |t|
     t.string "name", null: false
+    t.string "manager"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

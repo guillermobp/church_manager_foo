@@ -1,9 +1,13 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
-  province: one
-  name: MyString
+santiago:
+  province: santiago
+  name: Santiago
 
-two:
-  province: two
-  name: MyString
+providencia:
+  province: santiago
+  name: Providencia
+
+concepcion:
+  province: concepcion
+  name: Concepción

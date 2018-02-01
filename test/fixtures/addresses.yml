@@ -1,9 +1,13 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
-  street: 
-  number: MyString
+san_agustin:
+  church: san_agustin
+  commune: concepcion
+  street_name: Castellón
+  street_number: 254
 
-two:
-  street: 
-  number: MyString
+anunciacion:
+  church: anunciacion
+  commune: providencia
+  street_name: Avenida Pedro de Valdivia
+  street_number: 1850

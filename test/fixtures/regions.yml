@@ -1,7 +1,10 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
-  name: MyString
+metropolitana:
+  name: Metropolitana
 
-two:
-  name: MyString
+del_biobio:
+  name: Del Biobío
+
+de_los_rios:
+  name: De Los Ríos
