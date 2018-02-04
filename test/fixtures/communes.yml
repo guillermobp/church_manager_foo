@@ -8,6 +8,10 @@ providencia:
   province: santiago
   name: Providencia
 
+colina:
+  province: chacabuco
+  name: Colina
+
 concepcion:
   province: concepcion
   name: Concepción

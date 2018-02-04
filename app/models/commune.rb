@@ -4,5 +4,5 @@ class Commune < ApplicationRecord
   has_many :addresses
   has_many :churches, through: :addresses
 
-  validates :name, presence: true
+  validates :name, presence: true, uniqueness: { case_sensitive: false, scope: :province }
 end

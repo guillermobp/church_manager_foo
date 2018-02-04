@@ -4,6 +4,10 @@ santiago:
   region: metropolitana
   name: Santiago
 
+chacabuco:
+  region: metropolitana
+  name: Chacabuco
+
 concepcion:
   region: del_biobio
   name: Concepción
