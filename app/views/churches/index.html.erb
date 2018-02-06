@@ -1,43 +1,49 @@
 <div class="card">
   <div class="card-body">
     <h3 class="card-title">My Church</h3>
+
     <%= form_with model: @church do |form| %>
       <div class="form-group">
         <%= form.label :name, class: "form-control-label" %>
         <%= form.text_field :name, class: "form-control" %>
       </div>
 
-      <%= form.fields_for :address, @church.address do |address| %>
-        <div class="row">
-          <div class="col-6">
-            <div class="form-group">
-              <%= address.label :street_name, class: "form-control-label" %>
-              <%= address.text_field :street_name, class: "form-control" %>
-            </div>
-          </div>
-
-          <div class="col-2">
-            <div class="form-group">
-              <%= address.label :street_number, class: "form-control-label" %>
-              <%= address.text_field :street_number, class: "form-control" %>
-            </div>
-          </div>
-
-          <div class="col-2">
-            <div class="form-group">
-              <%= address.label :country, class: "form-control-label" %>
-              <%= address.collection_select :country, Country.all, :id, :name, {}, { class: "form-control" } %>
-            </div>
-          </div>
-
-          <div class="col-2">
-            <div class="form-group">
-              <%= address.label :country_administrative_level, @first_level_name, class: "form-control-label" %>
-              <%= address.collection_select :country_administrative_level, CountryAdministrativeLevel.where(country: 1, first_level_id: nil), :id, :name, {}, { class: "form-control" } %>
-            </div>
+      <div class="row">
+        <div class="col-4">
+          <div class="form-group">
+            <%= form.label :street_name, class: "form-control-label" %>
+            <%= form.text_field :street_name, class: "form-control" %>
           </div>
         </div>
-      <% end %>
+
+        <div class="col-2">
+          <div class="form-group">
+            <%= form.label :street_number, class: "form-control-label" %>
+            <%= form.text_field :street_number, class: "form-control" %>
+          </div>
+        </div>
+
+        <div class="col-2">
+          <div class="form-group">
+            <%= form.label :region, class: "form-control-label" %>
+            <%= form.collection_select :region_id, Region.all, :id, :name, {}, { class: "form-control" } %>
+          </div>
+        </div>
+
+        <div class="col-2">
+          <div class="form-group">
+            <%= form.label :province, class: "form-control-label" %>
+            <%= form.collection_select :province_id, Province.where(region: @church.region), :id, :name, {}, { class: "form-control" } %>
+          </div>
+        </div>
+
+        <div class="col-2">
+          <div class="form-group">
+            <%= form.label :commune, class: "form-control-label" %>
+            <%= form.collection_select :commune_id, Commune.where(province: @church.province), :id, :name, {}, { class: "form-control" } %>
+          </div>
+        </div>
+      </div>
 
       <%= form.submit %>
     <% end %>
