@@ -11,3 +11,9 @@ anunciacion:
   commune: providencia
   street_name: Avenida Pedro de Valdivia
   street_number: 1850
+
+san_ramon:
+  church: san_ramon
+  commune: providencia
+  street_name: Mardoqueo Fernández
+  street_number: 100
