@@ -26,6 +26,9 @@ province = Province.create(name: "Biobío", region: region)
 province = Province.create(name: "Concepción", region: region)
 # #### Comunas
 commune = Commune.create(name: "Concepción", province: province)
+church = Church.create(name: "Parroquia San Agustín de Concepción", manager: "Juliano")
+address = Address.create(street_name: "Castellón", street_number: 254, reference: "Entre Lord Cochrane y San Martín", zip_code: "4070124", latitude: -36.827810, longitude: -73.045677, commune: commune, church: church)
+
 commune = Commune.create(name: "Coronel", province: province)
 commune = Commune.create(name: "Chiguayante", province: province)
 commune = Commune.create(name: "Florida", province: province)
@@ -45,7 +48,3 @@ region = Region.create(name: "Metropolitana")
 province = Province.create(name: "Santiago", region: region)
 # #### Comunas
 commune = Commune.create(name: "Providencia", province: province)
-
-church = Church.create(name: "Parroquia San Agustín de Concepción", manager: "Juliano")
-
-address = Address.create(street_name: "Castellón", street_number: 254, reference: "Entre Lord Cochrane y San Martín", zip_code: "4070124", latitude: -36.827810, longitude: -73.045677, commune: commune, church: church)
