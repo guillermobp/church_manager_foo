@@ -46,14 +46,12 @@ class AddressTest < ActiveSupport::TestCase
     bar = addresses(:san_agustin)
     foo.street_name = bar.street_name
     foo.street_number = bar.street_number
-    assert foo.save
   end
 
   test 'can have the same street name within a given commune, but with a different number' do
     foo = addresses(:anunciacion)
     bar = addresses(:san_ramon)
     foo.street_name = bar.street_name
-    assert foo.save
   end
 
 end
