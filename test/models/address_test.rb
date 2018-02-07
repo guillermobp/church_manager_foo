@@ -6,7 +6,6 @@ class AddressTest < ActiveSupport::TestCase
     address = addresses(:anunciacion)
     address.commune = nil
     assert_not address.save
-    puts address.errors.first
   end
 
   test 'should not be saved without a street name' do
