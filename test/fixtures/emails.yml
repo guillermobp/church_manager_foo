@@ -2,10 +2,10 @@
 
 one:
   contact: one
-  address: MyString
-  is_verified: false
+  address: one@domain.com
+  is_verified: true
 
 two:
-  contact: one
-  address: MyString
+  contact: two
+  address: two@domain.com
   is_verified: false

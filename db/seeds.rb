@@ -48,3 +48,13 @@ region = Region.create(name: "Metropolitana")
 province = Province.create(name: "Santiago", region: region)
 # #### Comunas
 commune = Commune.create(name: "Providencia", province: province)
+
+contact = Contact.create(church: church, full_name: 'John Doe')
+email = Email.create(contact: contact, address: 'jdoe@yahoo.com', is_verified: true)
+email = Email.create(contact: contact, address: 'jdoe@outlook.com', is_verified: false)
+email = Email.create(contact: contact, address: 'jdoe@gmail.com', is_verified: true)
+phone = Phone.create(contact: contact, country_code: 56, number: 412957490)
+phone = Phone.create(contact: contact, country_code: 56, number: 976818537)
+contact.main_email = email
+contact.main_phone = phone
+contact.save

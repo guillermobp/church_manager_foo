@@ -43,17 +43,21 @@ ActiveRecord::Schema.define(version: 20180126015916) do
   end
 
   create_table "contacts", force: :cascade do |t|
-    t.string "full_name", null: false
     t.integer "church_id"
+    t.string "full_name", null: false
+    t.integer "main_email_id"
+    t.integer "main_phone_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["church_id"], name: "index_contacts_on_church_id"
+    t.index ["main_email_id"], name: "index_contacts_on_main_email_id"
+    t.index ["main_phone_id"], name: "index_contacts_on_main_phone_id"
   end
 
   create_table "emails", force: :cascade do |t|
+    t.integer "contact_id"
     t.string "address", null: false
     t.boolean "is_verified", default: false
-    t.integer "contact_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["contact_id"], name: "index_emails_on_contact_id"
