@@ -10,6 +10,9 @@ class Church < ApplicationRecord
   has_many :emails, through: :contacts
   has_many :phones, through: :contacts
 
+  has_many :priesthoods
+  has_many :priests, through: :priesthoods
+
   delegate :street_name, to: :address
   delegate :street_number, to: :address
 

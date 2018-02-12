@@ -58,3 +58,8 @@ phone = Phone.create(contact: contact, country_code: 56, number: 976818537)
 contact.main_email = email
 contact.main_phone = phone
 contact.save
+
+person = Person.create(first_name: 'Agustín', last_name: 'de Hipona', display_name: 'San Agustín', birth_date: DateTime.new(354,11,13))
+priesthood = Priesthood.create(priest: person, church: church, period_begin: DateTime.new(2018,01,01), period_end: DateTime.new(2018,01,10))
+priesthood = Priesthood.create(priest: person, church: church, period_begin: DateTime.new(2018,01,15), period_end: DateTime.new(2018,01,30))
+priesthood = Priesthood.create(priest: person, church: church, period_begin: DateTime.new(2018,02,01))

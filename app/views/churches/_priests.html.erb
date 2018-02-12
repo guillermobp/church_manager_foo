@@ -1,3 +1,23 @@
 <div class="card-body">
   <h3 class="card-title">Priests</h3>
+
+  <table class="table">
+    <thead>
+      <th><input type="checkbox" class="select-all"></th>
+      <th>Full Name</th>
+      <th>Display Name</th>
+      <th>Status</th>
+      <th></th>
+    </thead>
+    <tbody>
+      <% @church.priesthoods.each do |priesthood| %>
+        <tr>
+          <td><input type="checkbox" class="selected-priesthood" id="<%= priesthood.id %>" /></td>
+          <td><%= priesthood.priest.full_name %></td>
+          <td><%= priesthood.priest.display_name %></td>
+          <td><%= priesthood.is_active %></td>
+          <td><%= fa_icon 'eye' %></td>
+      <% end %>
+    </tbody>
+  </table>
 </div>

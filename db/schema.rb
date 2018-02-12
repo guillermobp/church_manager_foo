@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180126015916) do
+ActiveRecord::Schema.define(version: 20180212002838) do
 
   create_table "addresses", force: :cascade do |t|
     t.string "street_name", null: false
@@ -63,6 +63,17 @@ ActiveRecord::Schema.define(version: 20180126015916) do
     t.index ["contact_id"], name: "index_emails_on_contact_id"
   end
 
+  create_table "people", force: :cascade do |t|
+    t.string "first_name", null: false
+    t.string "last_name", null: false
+    t.string "display_name"
+    t.integer "national_identification_number"
+    t.string "avatar_url"
+    t.datetime "birth_date"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "phones", force: :cascade do |t|
     t.integer "country_code", null: false
     t.integer "number", null: false
@@ -70,6 +81,17 @@ ActiveRecord::Schema.define(version: 20180126015916) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["contact_id"], name: "index_phones_on_contact_id"
+  end
+
+  create_table "priesthoods", force: :cascade do |t|
+    t.integer "priest_id"
+    t.integer "church_id"
+    t.datetime "period_begin"
+    t.datetime "period_end"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["church_id"], name: "index_priesthoods_on_church_id"
+    t.index ["priest_id"], name: "index_priesthoods_on_priest_id"
   end
 
   create_table "provinces", force: :cascade do |t|

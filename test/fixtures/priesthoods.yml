@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  priest: one
+  church: one
+  period_begin: 2018-02-11 21:28:38
+  period_end: 2018-02-11 21:28:38
+
+two:
+  priest: two
+  church: two
+  period_begin: 2018-02-11 21:28:38
+  period_end: 2018-02-11 21:28:38
