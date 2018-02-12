@@ -1,0 +1,56 @@
+<div class="card-body">
+  <h3 class="card-title">General Info</h3>
+
+  <div class="row">
+    <div class="col-8">
+      <div class="form-group">
+        <%= form.label :name, class: 'form-control-label' %>
+        <%= form.text_field :name, class: 'form-control' %>
+      </div>
+    </div>
+
+    <div class="col-4">
+      <div class="form-group">
+        <%= form.label :manager, class: 'form-control-label' %>
+        <%= form.text_field :manager, class: 'form-control' %>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-4">
+      <div class="form-group">
+        <%= form.label :street_name, class: 'form-control-label' %>
+        <%= form.text_field :street_name, class: 'form-control' %>
+      </div>
+    </div>
+
+    <div class="col-2">
+      <div class="form-group">
+        <%= form.label :street_number, class: 'form-control-label' %>
+        <%= form.text_field :street_number, class: 'form-control' %>
+      </div>
+    </div>
+
+    <div class="col-2">
+      <div class="form-group">
+        <%= form.label :region, class: 'form-control-label' %>
+        <%= form.collection_select :region_id, Region.all, :id, :name, {}, { class: 'form-control' } %>
+      </div>
+    </div>
+
+    <div class="col-2">
+      <div class="form-group">
+        <%= form.label :province, class: 'form-control-label' %>
+        <%= form.collection_select :province_id, Province.where(region: @church.region), :id, :name, {}, { class: 'form-control' } %>
+      </div>
+    </div>
+
+    <div class="col-2">
+      <div class="form-group">
+        <%= form.label :commune, class: 'form-control-label' %>
+        <%= form.collection_select :commune_id, Commune.where(province: @church.province), :id, :name, {}, { class: 'form-control' } %>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,23 @@
+<div class="card-body">
+  <h3 class="card-title">Contacts</h3>
+
+  <table class="table">
+    <thead>
+      <th><input type="checkbox" class="select-all"></th>
+      <th>Name</th>
+      <th>Email</th>
+      <th>Phone</th>
+      <th></th>
+    </thead>
+    <tbody>
+      <% @church.contacts.each do |contact| %>
+        <tr>
+          <td><input type="checkbox" class="selected-contact" id="<%= contact.id %>" /></td>
+          <td><%= contact.full_name %></td>
+          <td><%= contact.main_email.address %></td>
+          <td><%= contact.main_phone.display_number %></td>
+          <td><%= fa_icon 'eye' %></td>
+      <% end %>
+    </tbody>
+  </table>
+</div>
