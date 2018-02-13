@@ -22,4 +22,9 @@ class Church < ApplicationRecord
 
   validates :name, presence: true
   validates :manager, presence: true
+
+  def last_priesthoods
+    Priesthood.group([:priest_id, :church_id]).select(:id, :priest_id, :church_id, :period_begin, :period_end).where(church_id: id)
+  end
+
 end

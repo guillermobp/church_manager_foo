@@ -6,16 +6,18 @@
       <th><input type="checkbox" class="select-all"></th>
       <th>Full Name</th>
       <th>Display Name</th>
+      <th>Period Begin</th>
       <th>Status</th>
       <th></th>
     </thead>
     <tbody>
-      <% @church.priesthoods.each do |priesthood| %>
+      <% @church.last_priesthoods.each do |priesthood| %>
         <tr>
           <td><input type="checkbox" class="selected-priesthood" id="<%= priesthood.id %>" /></td>
           <td><%= priesthood.priest.full_name %></td>
           <td><%= priesthood.priest.display_name %></td>
-          <td><%= priesthood.is_active %></td>
+          <td><%= priesthood.period_begin.to_date %></td>
+          <td><%= priesthood.is_active ? 'Active' : 'Inactive' %></td>
           <td><%= fa_icon 'eye' %></td>
       <% end %>
     </tbody>
