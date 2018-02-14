@@ -13,6 +13,18 @@ class ChurchesController < ApplicationController
   end
 
   def update
+    @church = Church.find(params[:id])
+
+    if @church.update(church_params)
+      flash[:success] = 'Church data has been updated successfully'
+    else
+      flash[:error] = 'An error occured trying to save the data'
+    end
+
+    redirect_to churches_path
+  end
+
+  def save
     binding.pry
   end
 
