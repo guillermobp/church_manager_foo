@@ -14,23 +14,23 @@ class ChurchesController < ApplicationController
 
   def update
     @church = Church.find(params[:id])
+    @address = @church.address
 
-    if @church.update(church_params)
-      flash[:success] = 'Church data has been updated successfully'
-    else
-      flash[:error] = 'An error occured trying to save the data'
+    if @church.update(church_params) and @address.update(address_params)
+      respond_to do |format|
+        format.json { render json: @church }
+      end
     end
 
-    redirect_to churches_path
-  end
-
-  def save
-    binding.pry
   end
 
   private
 
     def church_params
-      params.require(:church).permit(:name)
+      params.require(:church).permit(:name, :manager)
+    end
+
+    def address_params
+      params.require(:church).permit(:street_name, :street_number, :commune_id)
     end
 end

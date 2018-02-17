@@ -1,24 +1,14 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Known Bugs
 
-Things you may want to cover:
+* Select province change (Solved!)
 
-* Ruby version
+When a province only has one commune, and one changes the province to show one
+that is not associated with any commune, the orginal commune will still show,
+even though it is emptied when the province is changed.
 
-* System dependencies
+This should not happen in production, since every province should be associated
+with more than one commune, to begin with, but is not an acceptable behaviour.
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Solved by appending empty data to the select control.
