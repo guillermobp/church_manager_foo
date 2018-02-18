@@ -12,7 +12,7 @@ $(document).on('turbolinks:load', () => {
     $("select#church_province").empty();
 
     $.get(`/regions/${region_id}/provinces`)
-      .then((provinces) => { $("select#church_province").append(provinces) })
+      .then((provinces) => { $("select#church_province").html(provinces) })
       .always(() => { $("select#church_province").change() });
   });
 
@@ -23,7 +23,13 @@ $(document).on('turbolinks:load', () => {
     $("select#church_commune").empty();
 
     $.get(`/regions/${region_id}/provinces/${province_id}/communes`)
-      .then((communes) => { $("select#church_commune").append(communes) });
+      .then((communes) => { $("select#church_commune").html(communes) });
+  });
+
+  $("#modal-contact").on("show.bs.modal", (e) => {
+    var contact_id = $(e.relatedTarget).data("id");
+    $.get(`/contacts/${contact_id}`)
+      .then((contact) => { $("#modal-contact .modal-body").html(contact) });
   });
 
 });
