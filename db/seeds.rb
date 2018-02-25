@@ -38,13 +38,13 @@ contact.main_email = email
 contact.main_phone = phone
 contact.save
 
-person = Person.create(first_name: 'Agustín', last_name: 'de Hipona', display_name: 'San Agustín', birth_date: DateTime.new(354,11,13))
-priesthood = Priesthood.create(priest: person, church: church, period_begin: DateTime.new(2018,01,01), period_end: DateTime.new(2018,01,10))
-priesthood = Priesthood.create(priest: person, church: church, period_begin: DateTime.new(2018,01,15), period_end: DateTime.new(2018,01,30))
-priesthood = Priesthood.create(priest: person, church: church, period_begin: DateTime.new(2018,02,01))
-person = Person.create(first_name: 'Osvaldo', last_name: 'Walker', display_name: 'Padre Osvaldo')
-priesthood = Priesthood.create(priest: person, church: church, period_begin: DateTime.new(2018,01,01), period_end: DateTime.new(2018,01,10))
-priesthood = Priesthood.create(priest: person, church: church, period_begin: DateTime.new(2018,02,01), period_end: DateTime.new(2018,02,10))
+priest = Priest.create(first_name: 'Agustín', last_name: 'de Hipona', display_name: 'San Agustín', birth_date: DateTime.new(354,11,13))
+priesthood = Priesthood.create(priest: priest, church: church, period_begin: DateTime.new(2018,01,01), period_end: DateTime.new(2018,01,10))
+priesthood = Priesthood.create(priest: priest, church: church, period_begin: DateTime.new(2018,01,15), period_end: DateTime.new(2018,01,30))
+priesthood = Priesthood.create(priest: priest, church: church, period_begin: DateTime.new(2018,02,01))
+priest = Priest.create(first_name: 'Osvaldo', last_name: 'Walker', display_name: 'Padre Osvaldo')
+priesthood = Priesthood.create(priest: priest, church: church, period_begin: DateTime.new(2018,01,01), period_end: DateTime.new(2018,01,10))
+priesthood = Priesthood.create(priest: priest, church: church, period_begin: DateTime.new(2018,02,01), period_end: DateTime.new(2018,02,10))
 
 commune = Commune.create(name: "Coronel", province: province)
 commune = Commune.create(name: "Chiguayante", province: province)
@@ -79,10 +79,10 @@ contact.main_email = email
 contact.main_phone = phone
 contact.save
 
-person = Person.create(first_name: 'Agustín', last_name: 'de Hipona', display_name: 'San Agustín', birth_date: DateTime.new(354,11,13))
-priesthood = Priesthood.create(priest: person, church: church, period_begin: DateTime.new(2018,01,01), period_end: DateTime.new(2018,01,10))
-priesthood = Priesthood.create(priest: person, church: church, period_begin: DateTime.new(2018,01,15), period_end: DateTime.new(2018,01,30))
-priesthood = Priesthood.create(priest: person, church: church, period_begin: DateTime.new(2018,02,01))
-person = Person.create(first_name: 'Osvaldo', last_name: 'Walker', display_name: 'Padre Osvaldo')
-priesthood = Priesthood.create(priest: person, church: church, period_begin: DateTime.new(2018,01,01), period_end: DateTime.new(2018,01,10))
-priesthood = Priesthood.create(priest: person, church: church, period_begin: DateTime.new(2018,02,01), period_end: DateTime.new(2018,02,10))
+priest = Priest.create(first_name: 'Agustín', last_name: 'de Hipona', display_name: 'San Agustín', birth_date: DateTime.new(354,11,13))
+priesthood = Priesthood.create(priest: priest, church: church, period_begin: DateTime.new(2018,01,01), period_end: DateTime.new(2018,01,10))
+priesthood = Priesthood.create(priest: priest, church: church, period_begin: DateTime.new(2018,01,15), period_end: DateTime.new(2018,01,30))
+priesthood = Priesthood.create(priest: priest, church: church, period_begin: DateTime.new(2018,02,01))
+priest = Priest.create(first_name: 'Osvaldo', last_name: 'Walker', display_name: 'Padre Osvaldo')
+priesthood = Priesthood.create(priest: priest, church: church, period_begin: DateTime.new(2018,01,01), period_end: DateTime.new(2018,01,10))
+priesthood = Priesthood.create(priest: priest, church: church, period_begin: DateTime.new(2018,02,01), period_end: DateTime.new(2018,02,10))

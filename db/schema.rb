@@ -64,6 +64,7 @@ ActiveRecord::Schema.define(version: 20180212002838) do
   end
 
   create_table "people", force: :cascade do |t|
+    t.string "type"
     t.string "first_name", null: false
     t.string "last_name", null: false
     t.string "display_name"

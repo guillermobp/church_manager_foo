@@ -1,8 +1,8 @@
 class Priesthood < ApplicationRecord
-  belongs_to :priest, class_name: 'Person'
+  belongs_to :priest
   belongs_to :church
 
-  def is_active
+  def active?
     period_end == nil
   end
 end
