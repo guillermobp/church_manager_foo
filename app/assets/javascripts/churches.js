@@ -27,9 +27,14 @@ $(document).on('turbolinks:load', () => {
   });
 
   $("#modal-contact").on("show.bs.modal", (e) => {
-    var contact_id = $(e.relatedTarget).data("id");
-    $.get(`/contacts/${contact_id}`)
-      .then((contact) => { $("#modal-contact .modal-body").html(contact) });
+    var id = $(e.relatedTarget).data("id");
+    $.get(`/contacts/${id}`)
+      .then((response) => { $("#modal-contact .modal-body").html(response) });
+  });
+
+  $(".modal.priest-details").on("show.bs.modal", (e) => {
+    var id = $(e.relatedTarget).data("id");
+    $.get(`/priests/${id}`).then((response) => { $(".modal.priest-details .modal-body").html(response) })
   });
 
 });
