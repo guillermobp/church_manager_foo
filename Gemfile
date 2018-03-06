@@ -35,7 +35,7 @@ gem 'jbuilder', '~> 2.5'
 
 gem 'sprockets-rails', :require => 'sprockets/railtie'
 gem 'jquery-rails'
-gem 'bootstrap', '~> 4.0.0.beta2'
+gem 'bootstrap', '~> 4.0'
 gem 'font-awesome-rails'
 
 gem 'rails-assets-sweetalert2', source: 'https://rails-assets.org'
