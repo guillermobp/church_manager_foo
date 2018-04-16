@@ -1,3 +1,8 @@
+<%= form_with model: @church, data: { command: 'update',
+                                      entity: 'church',
+                                      msg_title: 'Update Church',
+                                      msg_text: 'The church has been updated successfully',
+                                      msg_type: 'success' } do |form| %>
 <div class="card-body">
   <h3 class="card-title">General Info</h3>
 
@@ -53,4 +58,11 @@
       </div>
     </div>
   </div>
+
+  <div class="row">
+    <div class="col-12">
+      <%= form.button class: 'btn btn-primary pull-right' %>
+    </div>
+  </div>
 </div>
+<% end %>

@@ -1,3 +1,10 @@
-class Priest < Person
-  has_many :priesthoods
+class Priest < ApplicationRecord
+  belongs_to :church
+
+  validates :first_name, presence: true
+  validates :last_name, presence: true
+
+  def full_name
+    "#{first_name} #{last_name}"
+  end
 end

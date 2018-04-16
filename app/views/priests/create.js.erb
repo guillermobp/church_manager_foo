@@ -1,0 +1,13 @@
+swal({
+  title: 'New Priest',
+  text: 'The priest <%= @priest.display_name %> has been created successfully!',
+  type: 'success'
+}).then(() => {
+  let node = $('table#priests').DataTable().row.add($("<%= escape_javascript(render partial: 'priests/priest_row', locals: { priest_row: @priest }) %>")).draw().node();
+
+  $('a[data-remote="true"]', node)
+  .on('ajax:success', row_action_on_ajax_success)
+  .on('ajax:error', on_ajax_error);
+
+  $('table#priests').parents('div.card-body').find('form input').val('');
+});

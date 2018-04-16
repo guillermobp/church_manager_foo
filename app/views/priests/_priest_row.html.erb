@@ -1,0 +1,16 @@
+<tr>
+  <td></td>
+  <td></td>
+  <td><input type="checkbox" class="selected-priesthood" id="<%= priest_row.id %>" /></td>
+  <td><%= priest_row.full_name %></td>
+  <td><%= priest_row.display_name %></td>
+  <td>
+    <%= check_box_tag dom_id(priest_row, 'active_toggle'),
+                      priest_row.active?,
+                      priest_row.active?,
+                      data: { remote: true,
+                              url: toggle_active_priest_path(priest_row),
+                              method: :patch } %>
+  </td>
+  <td><%= fa_icon 'eye', data: { toggle: 'modal', target: '.modal', url: "/priests/#{priest_row.id}" } %></td>
+</tr>

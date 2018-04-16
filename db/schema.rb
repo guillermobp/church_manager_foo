@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180212002838) do
+ActiveRecord::Schema.define(version: 20180415230802) do
 
   create_table "addresses", force: :cascade do |t|
     t.string "street_name", null: false
@@ -42,28 +42,8 @@ ActiveRecord::Schema.define(version: 20180212002838) do
     t.index ["province_id"], name: "index_communes_on_province_id"
   end
 
-  create_table "contacts", force: :cascade do |t|
-    t.integer "church_id"
-    t.string "full_name", null: false
-    t.integer "main_email_id"
-    t.integer "main_phone_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["church_id"], name: "index_contacts_on_church_id"
-    t.index ["main_email_id"], name: "index_contacts_on_main_email_id"
-    t.index ["main_phone_id"], name: "index_contacts_on_main_phone_id"
-  end
-
-  create_table "emails", force: :cascade do |t|
-    t.integer "contact_id"
-    t.string "address", null: false
-    t.boolean "is_verified", default: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["contact_id"], name: "index_emails_on_contact_id"
-  end
-
   create_table "people", force: :cascade do |t|
+    t.integer "church_id"
     t.string "type"
     t.string "first_name", null: false
     t.string "last_name", null: false
@@ -73,26 +53,18 @@ ActiveRecord::Schema.define(version: 20180212002838) do
     t.datetime "birth_date"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["church_id"], name: "index_people_on_church_id"
   end
 
-  create_table "phones", force: :cascade do |t|
-    t.integer "country_code", null: false
-    t.integer "number", null: false
-    t.integer "contact_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["contact_id"], name: "index_phones_on_contact_id"
-  end
-
-  create_table "priesthoods", force: :cascade do |t|
-    t.integer "priest_id"
+  create_table "priests", force: :cascade do |t|
     t.integer "church_id"
-    t.datetime "period_begin"
-    t.datetime "period_end"
+    t.string "first_name"
+    t.string "last_name"
+    t.string "display_name"
+    t.boolean "active"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["church_id"], name: "index_priesthoods_on_church_id"
-    t.index ["priest_id"], name: "index_priesthoods_on_priest_id"
+    t.index ["church_id"], name: "index_priests_on_church_id"
   end
 
   create_table "provinces", force: :cascade do |t|

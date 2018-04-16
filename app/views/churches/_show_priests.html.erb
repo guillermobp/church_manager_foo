@@ -1,0 +1,34 @@
+<div class="card-body">
+  <h3 class="card-title">Priests</h3>
+
+  <div class="form-group">
+    <%= form_with model: @priest do |form| %>
+
+    <div class="input-group">
+      <%= form.text_field :first_name, class: 'form-control form-control-sm', placeholder: 'First Name' %>
+      <%= form.text_field :last_name, class: 'form-control form-control-sm', placeholder: 'Last Name' %>
+      <%= form.text_field :display_name, class: 'form-control form-control-sm', placeholder: 'Display Name' %>
+      <div class="input-group-append">
+        <%= form.button class: 'btn btn-secondary' %>
+      </div>
+    </div>
+    <% end %>
+  </div>
+
+  <table class="table" id="priests">
+    <thead>
+      <th></th>
+      <th>#</th>
+      <th><input type="checkbox" class="select-all"></th>
+      <th>Full Name</th>
+      <th>Display Name</th>
+      <th>Active</th>
+      <th></th>
+    </thead>
+    <tbody>
+      <%= render partial: 'priests/priest_row', collection: @priests %>
+    </tbody>
+  </table>
+</div>
+
+<%= render partial: 'layouts/modal', locals: { title: 'Update Priest' } %>
