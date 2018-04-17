@@ -1,15 +1,6 @@
-# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
-
-one:
-  first_name: MyString
-  last_name: MyString
-  display_name: MyString
-  active: false
-  church: one
-
-two:
-  first_name: MyString
-  last_name: MyString
-  display_name: MyString
-  active: false
-  church: two
+lovejoy:
+  first_name: Timothy
+  last_name: Lovejoy
+  display_name: Reverend Lovejoy
+  active: true
+  church: anunciacion
