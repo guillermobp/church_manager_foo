@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  church: one
+  priest: one
+  date: 2018-04-16
+  baptised: one
+  mother: one
+  father: one
+
+two:
+  church: two
+  priest: two
+  date: 2018-04-16
+  baptised: two
+  mother: two
+  father: two

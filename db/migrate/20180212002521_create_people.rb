@@ -1,7 +1,6 @@
 class CreatePeople < ActiveRecord::Migration[5.1]
   def change
     create_table :people do |t|
-      t.references :church
       t.string :type
       t.string :first_name, null: false
       t.string :last_name, null: false

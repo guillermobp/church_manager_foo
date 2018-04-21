@@ -1,0 +1,43 @@
+<div class="form-group">
+  <%= form.label :priest, class: 'form-control-label' %>
+  <%= form.collection_select :priest_id, Priest.all, :id, :full_name, {}, { class: 'form-control' } %>
+</div>
+
+<div class="form-group">
+  <%= form.label :date, class: 'form-control-label' %>
+  <%= form.date_field :date, class: 'form-control' %>
+</div>
+
+<div class="form-group">
+  <%= form.label :baptised, class: 'form-control-label' %>
+  <div class="input-group">
+    <%= form.text_field :baptised_info, id: 'baptised', class: 'form-control', readonly: :readonly %>
+    <div class="input-group-append">
+      <%= form.button 'Edit', type: :button, class: 'btn btn-secondary', data: { command: 'toggle', toggle: 'form', target: '#baptised-fields' } %>
+    </div>
+  </div>
+</div>
+
+<div class="form-group">
+  <%= form.label :mother, class: 'form-control-label' %>
+  <div class="input-group">
+    <%= form.text_field :mother_info, id: 'mother', class: 'form-control', readonly: :readonly %>
+    <div class="input-group-append">
+      <%= form.button 'Edit', type: :button, class: 'btn btn-secondary', data: { command: 'toggle', toggle: 'form', target: '#mother-fields' } %>
+    </div>
+  </div>
+</div>
+
+<div class="form-group">
+  <%= form.label :father, class: 'form-control-label' %>
+  <div class="input-group">
+    <%= form.text_field :father_info, id: 'father', class: 'form-control', readonly: :readonly %>
+    <div class="input-group-append">
+      <%= form.button 'Edit', type: :button, class: 'btn btn-secondary', data: { command: 'toggle', toggle: 'form', target: '#father-fields' } %>
+    </div>
+  </div>
+</div>
+
+<div class="form-group">
+  <%= form.button class: 'btn btn-primary btn-block' %>
+</div>

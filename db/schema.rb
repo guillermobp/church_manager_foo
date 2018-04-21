@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180415230802) do
+ActiveRecord::Schema.define(version: 20180417011843) do
 
   create_table "addresses", force: :cascade do |t|
     t.string "street_name", null: false
@@ -25,6 +25,20 @@ ActiveRecord::Schema.define(version: 20180415230802) do
     t.datetime "updated_at", null: false
     t.index ["church_id"], name: "index_addresses_on_church_id"
     t.index ["commune_id"], name: "index_addresses_on_commune_id"
+  end
+
+  create_table "baptisms", force: :cascade do |t|
+    t.integer "priest_id"
+    t.integer "baptised_id"
+    t.integer "mother_id"
+    t.integer "father_id"
+    t.date "date"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["baptised_id"], name: "index_baptisms_on_baptised_id"
+    t.index ["father_id"], name: "index_baptisms_on_father_id"
+    t.index ["mother_id"], name: "index_baptisms_on_mother_id"
+    t.index ["priest_id"], name: "index_baptisms_on_priest_id"
   end
 
   create_table "churches", force: :cascade do |t|
@@ -43,7 +57,6 @@ ActiveRecord::Schema.define(version: 20180415230802) do
   end
 
   create_table "people", force: :cascade do |t|
-    t.integer "church_id"
     t.string "type"
     t.string "first_name", null: false
     t.string "last_name", null: false
@@ -53,7 +66,6 @@ ActiveRecord::Schema.define(version: 20180415230802) do
     t.datetime "birth_date"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["church_id"], name: "index_people_on_church_id"
   end
 
   create_table "priests", force: :cascade do |t|
