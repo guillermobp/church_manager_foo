@@ -6,16 +6,16 @@
   <div class="card-body">
     <div class="form-group">
       <%= form.label :first_name, class: 'form-control-label' %>
-      <%= form.text_field :first_name, class: 'form-control', id: "#{type}-first-name" %>
+      <%= form.text_field :first_name, class: 'form-control', id: "baptism_#{type}_info_first_name" %>
     </div>
 
     <div class="form-group">
       <%= form.label :last_name, class: 'form-control-label' %>
-      <%= form.text_field :last_name, class: 'form-control', id: "#{type}-last-name" %>
+      <%= form.text_field :last_name, class: 'form-control', id: "baptism_#{type}_info_last_name" %>
     </div>
 
     <div class="form-group">
-      <%= form.button 'Ok', type: :button, class: 'btn btn-secondary btn-block', data: { command: 'set', target: "##{type}" } %>
+      <%= form.button 'Ok', type: :button, class: 'btn btn-secondary btn-block', data: { command: 'set', target: "#baptism_#{type}_info" } %>
     </div>
   </div>
 </div>

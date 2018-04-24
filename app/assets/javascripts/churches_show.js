@@ -37,17 +37,17 @@ function row_action_on_ajax_success(e) {
   }
 }
 
-function church_region_on_change(e) {
+function church_region_id_on_change(e) {
   let rid = $(e.target).val();
-  $('select#church_province').empty().load(`/regions/${rid}/provinces`, () => {
-    $('select#church_province').change();
+  $('select#church_province_id').empty().load(`/regions/${rid}/provinces`, () => {
+    $('select#church_province_id').change();
   });
 }
 
-function church_province_on_change(e) {
-  let rid = $('#church_region').val();
+function church_province_id_on_change(e) {
+  let rid = $('#church_region_id').val();
   let pid = $(e.target).val();
-  $('select#church_commune').empty().load(`/regions/${rid}/provinces/${pid}/communes`);
+  $('select#church_commune_id').empty().load(`/regions/${rid}/provinces/${pid}/communes`);
 }
 
 function datatable_on_draw(e) {
@@ -71,11 +71,11 @@ $(document).on('turbolinks:load', () => {
   $('form')
   .on('ajax:error', on_ajax_error);
 
-  $('select#church_region')
-  .on('change', church_region_on_change);
+  $('select#church_region_id')
+  .on('change', church_region_id_on_change);
 
-  $('select#church_province')
-  .on('change', church_province_on_change);
+  $('select#church_province_id')
+  .on('change', church_province_id_on_change);
 
   $('table')
   .on('draw.dt', datatable_on_draw);

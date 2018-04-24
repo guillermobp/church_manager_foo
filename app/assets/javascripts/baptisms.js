@@ -5,8 +5,8 @@ function button_on_click(e) {
     $(data.target).toggleClass('d-none');
   }
   if ('set' === data.command && data.target) {
-    let first_name = $(`${data.target}-first-name`).val();
-    let last_name = $(`${data.target}-last-name`).val();
+    let first_name = $(`${data.target}_first_name`).val();
+    let last_name = $(`${data.target}_last_name`).val();
     $(data.target).val(`${first_name} ${last_name}`);
     $(e.target).parents('.side-fields').addClass('d-none');
   }
