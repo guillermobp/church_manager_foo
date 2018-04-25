@@ -8,35 +8,22 @@
   <%= form.date_field :date, class: 'form-control' %>
 </div>
 
+<% ['baptised', 'mother', 'father'].each do |entity| %>
 <div class="form-group">
-  <%= form.label :baptised, class: 'form-control-label' %>
+  <label for="btn-<%= entity %>" class="form-control-label"><%= entity.titleize %></label>
   <div class="input-group">
-    <%= form.text_field :baptised_info, class: 'form-control', readonly: :readonly %>
+    <label for="btn-<%= entity %>" id="baptism_<%= entity %>" class="form-control"></label>
     <div class="input-group-append">
-      <%= form.button 'Edit', type: :button, class: 'btn btn-secondary', data: { command: 'toggle', toggle: 'form', target: '#baptised-fields' } %>
+      <button id="btn-<%= entity %>"
+              type="button"
+              class="btn btn-secondary"
+              data-command="toggle"
+              data-toggle="form"
+              data-target="#baptism_<%= entity %>_fields">Edit</button>
     </div>
   </div>
 </div>
-
-<div class="form-group">
-  <%= form.label :mother, class: 'form-control-label' %>
-  <div class="input-group">
-    <%= form.text_field :mother_info, class: 'form-control', readonly: :readonly %>
-    <div class="input-group-append">
-      <%= form.button 'Edit', type: :button, class: 'btn btn-secondary', data: { command: 'toggle', toggle: 'form', target: '#mother-fields' } %>
-    </div>
-  </div>
-</div>
-
-<div class="form-group">
-  <%= form.label :father, class: 'form-control-label' %>
-  <div class="input-group">
-    <%= form.text_field :father_info, class: 'form-control', readonly: :readonly %>
-    <div class="input-group-append">
-      <%= form.button 'Edit', type: :button, class: 'btn btn-secondary', data: { command: 'toggle', toggle: 'form', target: '#father-fields' } %>
-    </div>
-  </div>
-</div>
+<% end %>
 
 <div class="form-group">
   <%= form.button class: 'btn btn-primary btn-block' %>

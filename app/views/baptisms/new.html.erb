@@ -11,17 +11,9 @@
       </div>
 
       <div class="col mt-auto">
-        <%= form.fields_for @baptised do |person_form| %>
-          <%= render partial: 'people/person', locals: { form: person_form, type: 'baptised' } %>
-        <% end %>
-
-        <%= form.fields_for @mother do |person_form| %>
-          <%= render partial: 'people/person', locals: { form: person_form, type: 'mother' } %>
-        <% end %>
-
-        <%= form.fields_for @father do |person_form| %>
-          <%= render partial: 'people/person', locals: { form: person_form, type: 'father' } %>
-        <% end %>
+        <%= render partial: 'people/person', locals: { f: form, person: @baptised } %>
+        <%= render partial: 'people/person', locals: { f: form, person: @mother } %>
+        <%= render partial: 'people/person', locals: { f: form, person: @father } %>
       </div>
     </div>
     <% end %>

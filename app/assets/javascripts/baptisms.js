@@ -7,7 +7,7 @@ function button_on_click(e) {
   if ('set' === data.command && data.target) {
     let first_name = $(`${data.target}_first_name`).val();
     let last_name = $(`${data.target}_last_name`).val();
-    $(data.target).val(`${first_name} ${last_name}`);
+    $(data.target).text(`${first_name} ${last_name}`);
     $(e.target).parents('.side-fields').addClass('d-none');
   }
 }
