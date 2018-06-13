@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180417011843) do
+ActiveRecord::Schema.define(version: 2018_04_17_011843) do
 
   create_table "addresses", force: :cascade do |t|
     t.string "street_name", null: false
@@ -32,11 +32,15 @@ ActiveRecord::Schema.define(version: 20180417011843) do
     t.integer "baptised_id"
     t.integer "mother_id"
     t.integer "father_id"
+    t.integer "godfather_id"
+    t.integer "godmother_id"
     t.date "date"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["baptised_id"], name: "index_baptisms_on_baptised_id"
     t.index ["father_id"], name: "index_baptisms_on_father_id"
+    t.index ["godfather_id"], name: "index_baptisms_on_godfather_id"
+    t.index ["godmother_id"], name: "index_baptisms_on_godmother_id"
     t.index ["mother_id"], name: "index_baptisms_on_mother_id"
     t.index ["priest_id"], name: "index_baptisms_on_priest_id"
   end
@@ -64,8 +68,10 @@ ActiveRecord::Schema.define(version: 20180417011843) do
     t.integer "national_identification_number"
     t.string "avatar_url"
     t.datetime "birth_date"
+    t.integer "birth_commune_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["birth_commune_id"], name: "index_people_on_birth_commune_id"
   end
 
   create_table "priests", force: :cascade do |t|

@@ -25,6 +25,11 @@ Rails.application.routes.draw do
 
   resources :people, only: [:show, :update]
 
+  # resources :baptiseds, only: [:create]
+  # resources :mothers, only: [:create]
+  # resources :fathers,
+  resources :baptiseds, :mothers, :fathers, :godmothers, :godfathers, only: [:create, :show, :update]
+
   resources :regions, only: [:index, :show] do
     resources :provinces, only: [:index, :show] do
       resources :communes, only: [:index, :show]
