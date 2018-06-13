@@ -1,0 +1,6 @@
+$('#<%= params[:selector] %>').html(`<%= render partial: 'nin_form', locals: { person: @person }%>`);
+
+// Init events for the new elements
+$('.national-identification-number', $('#<%= params[:selector] %>'))
+.on('keydown', nin_on_keydown)
+.on('keyup', nin_on_keyup);

@@ -1,26 +1,45 @@
-<%= f.fields_for person do |form| %>
-<div class="card d-none side-fields" id="baptism_<%= person.class.name.downcase %>_fields">
-  <div class="card-header">
-    <h3>New <%= person.class.name %></h3>
-  </div>
-
-  <div class="card-body">
-    <div class="form-group">
-      <%= form.label :first_name, class: 'form-control-label' %>
-      <%= form.text_field :first_name, class: 'form-control' %>
-    </div>
-
-    <div class="form-group">
-      <%= form.label :last_name, class: 'form-control-label' %>
-      <%= form.text_field :last_name, class: 'form-control' %>
-    </div>
-
-    <div class="form-group">
-      <%= form.button 'Ok', type: :button,
-                            class: 'btn btn-secondary btn-block',
-                            data: { command: 'set',
-                                    target: "#baptism_#{person.class.name.downcase}" } %>
+<%= form_with model: person do |form| %>
+<div class="form-group">
+  <%= form.label :nin_for_display, class: 'form-control-label' %>
+  <div class="input-group">
+    <%= form.text_field :nin_for_display, class: 'form-control national-identification-number' %>
+    <div class="input-group-append">
+      <%= link_to 'Change', people_nin_form_path(selector: "#{person.type.downcase}_fields", person: { type: person.type }), remote: true, class: 'btn btn-secondary' %>
     </div>
   </div>
+</div>
+
+<div class="form-group">
+  <%= form.label :first_name, class: 'form-control-label' %>
+  <%= form.text_field :first_name, class: 'form-control' %>
+</div>
+
+<div class="form-group">
+  <%= form.label :last_name, class: 'form-control-label' %>
+  <%= form.text_field :last_name, class: 'form-control' %>
+</div>
+
+<div class="form-group">
+  <%= form.label :display_name, class: 'form-control-label' %>
+  <%= form.text_field :display_name, class: 'form-control' %>
+</div>
+
+<div class="form-group">
+  <%= form.label :avatar_url, class: 'form-control-label' %>
+  <%= form.text_field :avatar_url, class: 'form-control' %>
+</div>
+
+<div class="form-group">
+  <%= form.label :birth_date, class: 'form-control-label' %>
+    <%= form.date_field :birth_date, class: 'form-control' %>
+</div>
+
+<div class="form-group">
+  <%= form.label :birth_commune_id, class: 'form-control-label' %>
+  <%= form.text_field :birth_commune_id, class: 'form-control' %>
+</div>
+
+<div class="form-group">
+  <%= form.submit class: 'btn btn-secondary' %>
 </div>
 <% end %>

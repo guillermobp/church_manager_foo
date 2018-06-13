@@ -7,6 +7,7 @@ class Church < ApplicationRecord
 
   has_many :priests
   has_many :baptisms, through: :priests
+  has_many :baptiseds, through: :baptisms
 
   delegate :street_name, to: :address
   delegate :street_number, to: :address

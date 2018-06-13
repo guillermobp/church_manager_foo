@@ -5,4 +5,6 @@ class Baptism < ApplicationRecord
   belongs_to :father
   belongs_to :godmother
   belongs_to :godfather
+
+  has_one :church, through: :priest
 end

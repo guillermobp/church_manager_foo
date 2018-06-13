@@ -4,19 +4,24 @@
   </div>
 
   <div class="card-body">
-    <%= form_with model: @baptism do |form| %>
     <div class="row">
       <div class="col">
-        <%= render partial: 'baptism', locals: { form: form } %>
+        <%= render partial: 'baptism' %>
       </div>
 
-      <div class="col mt-auto">
-        <%= render partial: 'people/person', locals: { f: form, person: @baptised } %>
-        <%= render partial: 'people/person', locals: { f: form, person: @mother } %>
-        <%= render partial: 'people/person', locals: { f: form, person: @father } %>
+      <div class="col">
+        <% [@baptised, @mother, @father, @godmother, @godfather].each do |entity| %>
+        <div class="card d-none side-fields">
+          <div class="card-header">
+            <h3><%= entity.type %></h3>
+          </div>
+          <div class="card-body" id="<%= entity.type.downcase %>_fields">
+            <%= render partial: 'people/nin_form', locals: { person: entity } %>
+          </div>
+        </div>
+        <% end %>
       </div>
     </div>
-    <% end %>
   </div>
 
   <div class="card-footer">

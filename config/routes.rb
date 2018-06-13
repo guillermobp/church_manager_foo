@@ -8,6 +8,16 @@ Rails.application.routes.draw do
 
   get 'provinces/show'
 
+  #get 'people/get_by_number/:national_identification_number', to: 'people#get_by_number'
+  # get 'baptisms/person_form/:national_identification_number', to: 'baptisms#person_form'
+
+  # post 'people/get_by_number', to: 'people#get_by_number'
+  get 'people/nin_form', to: 'people#nin_form'
+  post 'people/person_form_by_nin', to: 'people#person_form_by_nin'
+
+  # post 'baptisms/person_form', to: 'baptisms#person_form'
+  # get 'baptisms/nin_form', to:'baptisms#nin_form'
+
   patch '/priests/:id/toggle_active', to: 'priests#toggle_active', as: :toggle_active_priest
 
   get     '/login',   to: 'sessions#new'
