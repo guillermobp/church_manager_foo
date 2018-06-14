@@ -1,3 +1,0 @@
-class BaptisedsController < PeopleController
-
-end

@@ -1,11 +1,6 @@
 class BaptismsController < ApplicationController
 
   def new
-    @baptised = Baptised.new
-    @mother = Mother.new
-    @father = Father.new
-    @godmother = Godmother.new
-    @godfather = Godfather.new
     @baptism = Baptism.new(date: Date::today)
   end
 

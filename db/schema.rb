@@ -61,11 +61,10 @@ ActiveRecord::Schema.define(version: 2018_04_17_011843) do
   end
 
   create_table "people", force: :cascade do |t|
-    t.string "type"
+    t.integer "national_identification_number"
     t.string "first_name", null: false
     t.string "last_name", null: false
     t.string "display_name"
-    t.integer "national_identification_number"
     t.string "avatar_url"
     t.datetime "birth_date"
     t.integer "birth_commune_id"

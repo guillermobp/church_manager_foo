@@ -1,2 +1,0 @@
-class MothersController < PeopleController
-end

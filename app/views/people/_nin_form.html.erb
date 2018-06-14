@@ -1,6 +1,5 @@
-<%= form_with model: person, url: { action: 'person_form_by_nin', controller: 'people' }, scope: 'person' do |form| %>
-<%= form.hidden_field :type %>
-<%= hidden_field_tag 'selector', "#{person.type.downcase}_fields" %>
+<%= form_with model: Person.new, url: people_person_form_by_nin_path do |form| %>
+<%= hidden_field_tag 'selector', selector %>
 <div class="form-group">
   <%= form.label :national_identification_number, class: 'form-control-label' %>
   <div class="input-group">
