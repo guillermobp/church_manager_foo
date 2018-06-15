@@ -10,20 +10,14 @@ class PeopleController < ApplicationController
 
   def nin_form
     @selector = params[:selector]
-
     respond_to do |format|
       format.js
     end
   end
 
   def person_form_by_nin
-    @person = Person.find_by national_identification_number: person_params[:national_identification_number]
+    @person = Person.find_or_initialize_by national_identification_number: person_params[:national_identification_number].to_i
     @selector = params[:selector]
-
-    if @person.nil?
-      @person = Person.new(national_identification_number: person_params[:national_identification_number])
-    end
-
     respond_to do |format|
       format.js
     end
