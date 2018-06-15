@@ -1,10 +1,12 @@
 <%= form_with model: @person do |form| %>
+<%= hidden_field_tag 'selector', @selector %>
+<%= hidden_field_tag 'related_selector', @related_selector %>
 <div class="form-group">
   <%= form.label :nin_for_display, class: 'form-control-label' %>
   <div class="input-group">
-    <%= form.text_field :nin_for_display, class: 'form-control national-identification-number' %>
+    <%= form.text_field :national_identification_number, class: 'form-control national-identification-number' %>
     <div class="input-group-append">
-      <%= link_to 'Change', people_nin_form_path(selector: @selector), remote: true, class: 'btn btn-secondary' %>
+      <%= link_to 'Change', people_nin_form_path(selector: @selector, related_selector: @related_selector), remote: true, class: 'btn btn-secondary' %>
     </div>
   </div>
 </div>
@@ -36,7 +38,7 @@
 
 <div class="form-group">
   <%= form.label :birth_commune_id, class: 'form-control-label' %>
-  <%= form.collection_select :commune_id, Commune.all, :id, :name, {}, { class: 'form-control' } %>
+  <%= form.collection_select :birth_commune_id, Commune.all, :id, :name, {}, { class: 'form-control' } %>
 </div>
 
 <div class="form-group">
