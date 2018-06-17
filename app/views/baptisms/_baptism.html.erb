@@ -9,18 +9,18 @@
   <%= form.date_field :date, class: 'form-control' %>
 </div>
 
-<% ['baptised', 'mother', 'father', 'godmother', 'godfather'].each do |entity| %>
+<% [:baptised, :mother, :father, :godmother, :godfather].each do |entity| %>
 <div class="form-group">
-  <label for="btn-<%= entity %>" class="form-control-label"><%= entity.titleize %></label>
+  <%= form.label entity, for: "btn-#{entity}", class: 'form-control-label' %>
   <div class="input-group">
     <label for="btn-<%= entity %>" id="baptism_<%= entity %>" class="form-control"></label>
     <div class="input-group-append">
-      <button id="btn-<%= entity %>"
-              type="button"
-              class="btn btn-secondary"
-              data-command="toggle"
-              data-toggle="form"
-              data-target="#<%= entity %>_fields">Edit</button>
+      <%= form.button 'Edit', type: 'button',
+                              id: "btn-#{entity}",
+                              class: 'btn btn-secondary',
+                              data: { command: 'toggle',
+                                      toggle: 'form',
+                                      target: "##{entity}_fields" } %>
     </div>
   </div>
 </div>
