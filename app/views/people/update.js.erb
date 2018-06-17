@@ -1,2 +1,3 @@
 $('<%= @related_selector %>').text('<%= "#{@person.first_name} #{@person.last_name}" %>');
+$('<%= @related_selector %>').next('input[type=hidden]').val('<%= @person.id %>');
 $('<%= @selector %>').closest('div.card').addClass('d-none');
