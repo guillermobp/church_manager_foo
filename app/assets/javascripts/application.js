@@ -6,5 +6,6 @@
 //= require bootstrap-sprockets
 //= require dataTables/jquery.dataTables
 //= require select2-full
+//= require jquery_extensions
 //= require churches_show
 //= require baptisms

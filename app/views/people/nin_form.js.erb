@@ -1,6 +1,4 @@
 $('<%= @selector %>').html(`<%= render partial: 'nin_form', locals: { selector: @selector, related_selector: @related_selector } %>`);
 
-// Init events for the new elements
-$('.national-identification-number', $('<%= @selector %>'))
-.on('keydown', nin_on_keydown)
-.on('keyup', nin_on_keyup);
+// Init new controls
+$('.national-identification-number', $('<%= @selector %>')).nin();

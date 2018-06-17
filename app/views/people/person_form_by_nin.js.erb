@@ -1,1 +1,4 @@
 $('<%= @selector %>').html(`<%= render @person %>`);
+
+// Init new controls
+$('.national-identification-number', $('<%= @selector %>')).nin();
