@@ -9,3 +9,9 @@
 //= require jquery_extensions
 //= require churches_show
 //= require baptisms
+
+$(document).on('turbolinks:load', () => {
+  if ($('table').length) {
+    $('table').DataTable();
+  }
+});

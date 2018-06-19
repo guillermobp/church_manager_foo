@@ -1,5 +1,9 @@
 class BaptismsController < ApplicationController
 
+  def index
+    @baptisms = current_church.baptisms
+  end
+
   def new
     @baptism = Baptism.new(date: Date::today)
   end
