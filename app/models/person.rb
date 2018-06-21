@@ -12,6 +12,10 @@ class Person < ApplicationRecord
     "#{national_identification_number}-#{check_digit}"
   end
 
+  def name_for_display
+    display_name || full_name
+  end
+
   private
 
     def check_digit
