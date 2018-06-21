@@ -1,29 +1,14 @@
 Rails.application.routes.draw do
 
-  get 'communes/index'
-
-  get 'communes/show'
-
-  get 'provinces/index'
-
-  get 'provinces/show'
-
-  #get 'people/get_by_number/:national_identification_number', to: 'people#get_by_number'
-  # get 'baptisms/person_form/:national_identification_number', to: 'baptisms#person_form'
-
-  # post 'people/get_by_number', to: 'people#get_by_number'
-  get 'people/nin_form', to: 'people#nin_form'
-  post 'people/person_form_by_nin', to: 'people#person_form_by_nin'
-
-  # post 'baptisms/person_form', to: 'baptisms#person_form'
-  # get 'baptisms/nin_form', to:'baptisms#nin_form'
-
-  patch '/priests/:id/toggle_active', to: 'priests#toggle_active', as: :toggle_active_priest
-
   get     '/login',   to: 'sessions#new'
   post    '/login',   to: 'sessions#create'
   delete  '/logout',  to: 'sessions#destroy'
   get     '/landing', to: 'sessions#landing'
+
+  get 'people/nin_form', to: 'people#nin_form'
+  post 'people/person_form_by_nin', to: 'people#person_form_by_nin'
+
+  patch '/priests/:id/toggle_active', to: 'priests#toggle_active', as: :toggle_active_priest
 
   root 'sessions#landing'
 
@@ -34,10 +19,6 @@ Rails.application.routes.draw do
   resources :priests, only: [:create, :show, :update]
 
   resources :people, only: [:create, :show, :update]
-
-  # resources :baptiseds, only: [:create]
-  # resources :mothers, only: [:create]
-  # resources :fathers,
 
   resources :regions, only: [:index, :show] do
     resources :provinces, only: [:index, :show] do
