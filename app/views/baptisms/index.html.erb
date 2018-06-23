@@ -17,7 +17,10 @@
       <td><%= baptism.baptised.name_for_display %></td>
       <td><%= baptism.baptised.nin_for_display %></td>
       <td><%= baptism.date %></td>
-      <td><%= fa_icon 'eye' %></td>
+      <td>
+        <%= link_to fa_icon('eye 2x', text: 'View'), baptism, class: 'action' %>
+        <%= link_to fa_icon('edit 2x', text: 'Edit'), edit_baptism_path(baptism), class: 'action' %>
+      </td>
     </tr>
     <% end %>
   </tbody>

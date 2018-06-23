@@ -14,7 +14,7 @@ Rails.application.routes.draw do
 
   resource :church, only: [:show, :update]
 
-  resources :baptisms, only: [:index, :new, :create]
+  resources :baptisms, only: [:index, :new, :create, :show, :edit]
 
   resources :priests, only: [:create, :show, :update]
 
