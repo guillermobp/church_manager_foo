@@ -1,15 +1,11 @@
 <div id="myGroup">
   <div class="row">
     <div class="col-6 text-center bg-dark">
-      <a data-toggle="collapse" href="#collapseExample" aria-expanded="false" aria-controls="collapseExample" data-parent="#myGroup">
-        <%= fa_icon "plus-circle", class: "fa-5x" %>
-      </a>
+      <%= link_to fa_icon('plus-circle 5x', class: 'collapse-button'), nil, data: { toggle: 'collapse', target: '#collapseExample', parent: '#myGroup' } %>
     </div>
 
     <div class="col-6 text-center bg-info">
-      <a data-toggle="collapse" href="#collapseExample2" aria-expanded="false" aria-controls="collapseExample2" data-parent="#myGroup">
-        <%= fa_icon "search", class: "fa-5x" %>
-      </a>
+      <%= link_to fa_icon('search 5x', class: 'collapse-button'), nil, data: { toggle: 'collapse', target: '#collapseExample2', parent: '#myGroup' } %>
     </div>
   </div>
 
@@ -17,25 +13,21 @@
     <div class="col-12 collapse bg-dark" id="collapseExample">
       <div class="row">
         <div class="col-6 text-center landing-link-container">
-          <%= fa_icon "child", class: "fa-2x" %>
-          <%= link_to "New Baptism", new_baptism_path %>
+          <%= link_to fa_icon('child 2x', text: 'New Baptism'), new_baptism_path %>
         </div>
 
         <div class="col-6 text-center landing-link-container">
-          <%= fa_icon "glass", class: "fa-2x" %>
-          <%= link_to "New First Communion" %>
+          <%= link_to fa_icon('glass 2x', text: 'New First Communion') %>
         </div>
       </div>
 
       <div class="row">
         <div class="col-6 text-center landing-link-container">
-          <%= fa_icon "graduation-cap", class: "fa-2x" %>
-          <%= link_to "New Confirmation" %>
+          <%= link_to fa_icon('graduation-cap 2x', text: 'New Confirmation') %>
         </div>
 
         <div class="col-6 text-center landing-link-container">
-          <%= fa_icon "venus-mars", class: "fa-2x" %>
-          <%= link_to "New Marriage" %>
+          <%= link_to fa_icon('venus-mars 2x', text: 'New Marriage') %>
         </div>
       </div>
     </div>
@@ -43,25 +35,21 @@
     <div class="col-12 collapse bg-info" id="collapseExample2">
       <div class="row">
         <div class="col-6 text-center landing-link-container">
-          <%= fa_icon "child", class: "fa-2x" %>
-          <%= link_to "Find Baptism", church_path %>
+          <%= link_to fa_icon('child 2x', text: 'Find Baptism'), baptisms_path %>
         </div>
 
         <div class="col-6 text-center landing-link-container">
-          <%= fa_icon "glass", class: "fa-2x" %>
-          <%= link_to "Find First Communion" %>
+          <%= link_to fa_icon('glass 2x', text: 'Find 1st Communion') %>
         </div>
       </div>
 
       <div class="row">
         <div class="col-6 text-center landing-link-container">
-          <%= fa_icon "graduation-cap", class: "fa-2x" %>
-          <%= link_to "Find Confirmation" %>
+          <%= link_to fa_icon('graduation-cap 2x', text: 'Find Confirmation') %>
         </div>
 
         <div class="col-6 text-center landing-link-container">
-          <%= fa_icon "venus-mars", class: "fa-2x" %>
-          <%= link_to "Find Marriage" %>
+          <%= link_to fa_icon('venus-mars 2x', text: 'Find Marriage') %>
         </div>
       </div>
     </div>
@@ -69,15 +57,11 @@
 
   <div class="row">
     <div class="col-6 text-center bg-success">
-      <a data-toggle="collapse" href="#collapseExample3" aria-expanded="false" aria-controls="collapseExample3" data-parent="#myGroup">
-        <%= fa_icon "cog", class: "fa-5x" %>
-      </a>
+      <%= link_to fa_icon('cog 5x', class: 'collapse-button'), nil, data: { toggle: 'collapse', target: '#collapseExample3', parent: '#myGroup' } %>
     </div>
 
     <div class="col-6 text-center bg-warning">
-      <a data-toggle="collapse" href="#collapseExample4" aria-expanded="false" aria-controls="collapseExample4" data-parent="#myGroup">
-        <%= fa_icon "question-circle", class: "fa-5x" %>
-      </a>
+      <%= link_to fa_icon('question-circle 5x', class: 'collapse-button'), nil, data: { toggle: 'collapse', target: '#collapseExample4', parent: '#myGroup' } %>
     </div>
   </div>
 
@@ -85,25 +69,11 @@
     <div class="col-12 collapse bg-success" id="collapseExample3">
       <div class="row">
         <div class="col-6 text-center landing-link-container">
-          <%= fa_icon "child", class: "fa-2x" %>
-          <%= link_to "Find Baptism", church_path %>
+          <%= link_to fa_icon('child 2x', text: 'Profile'), church_path %>
         </div>
 
         <div class="col-6 text-center landing-link-container">
-          <%= fa_icon "glass", class: "fa-2x" %>
-          <%= link_to "Find First Communion" %>
-        </div>
-      </div>
-
-      <div class="row">
-        <div class="col-6 text-center landing-link-container">
-          <%= fa_icon "graduation-cap", class: "fa-2x" %>
-          <%= link_to "Find Confirmation" %>
-        </div>
-
-        <div class="col-6 text-center landing-link-container">
-          <%= fa_icon "venus-mars", class: "fa-2x" %>
-          <%= link_to "Find Marriage" %>
+          <%= link_to fa_icon('child 2x', text: 'Settings'), church_path %>
         </div>
       </div>
     </div>
@@ -111,13 +81,11 @@
     <div class="col-12 collapse bg-warning" id="collapseExample4">
       <div class="row">
         <div class="col-6 text-center landing-link-container">
-          <%= fa_icon "child", class: "fa-2x" %>
-          <%= link_to "Read the Docs", church_path %>
+          <%= link_to fa_icon('child 2x', text: 'Read the Docs'), church_path %>
         </div>
 
         <div class="col-6 text-center landing-link-container">
-          <%= fa_icon "glass", class: "fa-2x" %>
-          <%= link_to "Open Ticket" %>
+          <%= link_to fa_icon('glass 2x', text: 'Read the Docs'), church_path %>
         </div>
       </div>
     </div>
