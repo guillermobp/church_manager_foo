@@ -8,4 +8,8 @@ class Priest < ApplicationRecord
   def full_name
     "#{first_name} #{last_name}"
   end
+
+  def name_for_display
+    display_name || full_name
+  end
 end
