@@ -22,6 +22,10 @@ class BaptismsController < ApplicationController
     @baptism = Baptism.find(params[:id])
   end
 
+  def edit
+    @baptism = Baptism.find(params[:id])
+  end
+
   private
 
     def baptism_params

@@ -1,2 +1,42 @@
-<h1>Baptisms#edit</h1>
-<p>Find me in app/views/baptisms/edit.html.erb</p>
+<div class="card">
+  <div class="card-body">
+    <%= form_with model: @baptism do |form| %>
+    <div class="form-group">
+      <%= form.label :date %>
+      <%= form.text_field :date_for_display, class: 'form-control' %>
+    </div>
+
+    <div class="form-group">
+      <%= form.label :priest %>
+      <%= form.text_field :priest_name_for_display, class: 'form-control' %>
+    </div>
+
+    <div class="form-group">
+      <%= form.label :baptised %>
+      <%= form.text_field :baptised_name_for_display, class: 'form-control' %>
+    </div>
+
+    <div class="form-group">
+      <%= form.label :mother %>
+      <%= form.text_field :mother_name_for_display, class: 'form-control' %>
+    </div>
+
+    <div class="form-group">
+      <%= form.label :father %>
+      <%= form.text_field :father_name_for_display, class: 'form-control' %>
+    </div>
+
+    <div class="form-group">
+      <%= form.label :godmother %>
+      <%= form.text_field :godmother_name_for_display, class: 'form-control' %>
+    </div>
+
+    <div class="form-group">
+      <%= form.label :godfather %>
+      <%= form.text_field :godfather_name_for_display, class: 'form-control' %>
+    </div>
+
+    <%= form.submit class: 'btn btn-primary' %>
+    <% end %>
+  </div>
+</div>
