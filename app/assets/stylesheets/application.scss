@@ -20,6 +20,11 @@
 @import "select2";
 @import "select2-bootstrap";
 
+body {
+  font-family: 'Fira Sans';
+  background-color: #4F676F;
+}
+
 table .action {
   margin-left: 1rem;
 }
