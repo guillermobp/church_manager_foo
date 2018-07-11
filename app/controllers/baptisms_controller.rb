@@ -4,8 +4,21 @@ class BaptismsController < ApplicationController
     @baptisms = current_church.baptisms
   end
 
+  def show
+    @baptism = Baptism.find(params[:id])
+  end
+
   def new
-    @baptism = Baptism.new(date: Date::today)
+    @baptism = Baptism.new(date: Date::today,
+                           baptised: Person.new,
+                           mother: Person.new,
+                           father: Person.new,
+                           godmother: Person.new,
+                           godfather: Person.new)
+  end
+
+  def edit
+    @baptism = Baptism.find(params[:id])
   end
 
   def create
@@ -18,12 +31,15 @@ class BaptismsController < ApplicationController
     end
   end
 
-  def show
+  def update
     @baptism = Baptism.find(params[:id])
-  end
-
-  def edit
-    @baptism = Baptism.find(params[:id])
+    @baptism.update(baptism_params)
+    if (@baptism.save)
+      respond_to do |format|
+        format.js
+      end
+    else
+    end
   end
 
   private

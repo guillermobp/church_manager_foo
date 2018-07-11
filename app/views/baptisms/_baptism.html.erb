@@ -11,9 +11,9 @@
 
 <% [:baptised, :mother, :father, :godmother, :godfather].each do |role| %>
 <div class="form-group">
-  <%= form.label role, for: "btn-#{role}", class: 'form-control-label' %>
+  <%= label_tag role, nil, for: "btn-#{role}" %>
   <div class="input-group">
-    <label for="btn-<%= role %>" id="baptism_<%= role %>" class="form-control"></label>
+    <%= label_tag @baptism.send(role).name_for_display, nil, for: "btn-#{role}", class: 'form-control', id: "baptism_#{role}" %>
     <%= form.hidden_field "#{role}_id" %>
     <div class="input-group-append">
       <%= form.button 'Edit', type: 'button',
