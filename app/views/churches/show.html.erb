@@ -1,12 +1,19 @@
-<div class="card">
-  <div class="card-header">
-    <h2>My Church</h2>
+<%= content_for :title, 'My Church' %>
+
+<ul class="nav nav-tabs" role="tablist">
+  <li class="nav-item">
+    <a class="nav-link active" id="general-info-tab" data-toggle="tab" href="#general-info" role="tab" aria-controls="general-info" aria-selected="true">General Info</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" id="priests-tab" data-toggle="tab" href="#priests" role="tab" aria-controls="priests" aria-selected="false">Priests</a>
+  </li>
+</ul>
+
+<div class="tab-content">
+  <div class="tab-pane fade show active" id="general-info" role="tabpanel" aria-labelledby="general-info-tab">
+    <%= render 'show_general_info' %>
   </div>
-
-  <%= render 'show_general_info' %>
-
-  <%= render 'show_priests' %>
-
-  <div class="card-footer">
+  <div class="tab-pane fade" id="priests" role="tabpanel" aria-labelledby="priests-tab">
+    <%= render 'show_priests' %>
   </div>
 </div>
