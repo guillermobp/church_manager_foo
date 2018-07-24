@@ -13,7 +13,11 @@ class Person < ApplicationRecord
   end
 
   def name_for_display
-    display_name || full_name
+    if display_name.nil? || display_name.empty?
+      full_name
+    else
+      display_name
+    end
   end
 
   private
