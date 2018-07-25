@@ -1,4 +1,4 @@
-$('<%= @selector %>').html(`<%= render @person %>`);
+$('<%= @selector %>').html(`<%= render partial: @person, locals: { person: @person, selector: @selector, related_selector: @related_selector } %>`);
 
 // Init new controls
 $('.national-identification-number', $('<%= @selector %>')).nin();
