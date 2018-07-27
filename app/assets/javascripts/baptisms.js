@@ -14,6 +14,10 @@ $(document).on('turbolinks:load', () => {
   .on('click', button_on_click);
 
   // Init controls
-  $('select').select2();
+  $('select:not(.plain-select)')
+  .select2({
+    width: '100%'
+  });
+
   $('.national-identification-number').nin();
 });
