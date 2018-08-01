@@ -35,4 +35,7 @@
   <%= form.label :godfather %>
   <%= form.text_field :godfather_name_for_display, class: 'form-control', readonly: true %>
 </div>
+
+<%= link_to fa_icon('print', text: 'Print Baptism'), print_baptism_path, class: 'btn btn-primary', target: '_blank' %>
+
 <% end %>

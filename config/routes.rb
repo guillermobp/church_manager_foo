@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  root 'sessions#landing'
+
   get     '/login',   to: 'sessions#new'
   post    '/login',   to: 'sessions#create'
   delete  '/logout',  to: 'sessions#destroy'
@@ -10,7 +12,7 @@ Rails.application.routes.draw do
 
   patch '/priests/:id/toggle_active', to: 'priests#toggle_active', as: :toggle_active_priest
 
-  root 'sessions#landing'
+  get 'baptisms/:id/print', to: 'baptisms#print', as: :print_baptism
 
   resource :church, only: [:show, :update]
 
