@@ -24,14 +24,14 @@ class BaptismPdf < Prawn::Document
         default_leading 7
         move_down 100
         span(400, position: :center) do
-            text "En la iglesia parroquial #{baptism.church.name} el #{baptism.date.strftime('%d de %B de %Y')} " +
-                 "bautizó y puso óleo y crisma #{baptism.priest.name_for_display} " +
-                 "a #{baptism.baptised.name_for_display}, que nació en " +
-                 "#{baptism.baptised.birth_commune.name} el #{baptism.baptised.birth_date.strftime('%d de %B de %Y')} " +
-                 "R.U.N.: #{baptism.baptised.nin_for_display} " +
-                 "hijo de #{baptism.father.name_for_display} " +
-                 "y de #{baptism.mother.name_for_display} " +
-                 "Padrinos: #{baptism.godfather.name_for_display} y #{baptism.godmother.name_for_display}."
+            text "En la iglesia parroquial #{baptism.church_name} el #{baptism.date.strftime('%d de %B de %Y')} " +
+                 "bautizó y puso óleo y crisma #{baptism.priest_name_for_display} " +
+                 "a #{baptism.baptised_name_for_display}, que nació en " +
+                 "#{baptism.baptised_birth_commune_name} el #{baptism.baptised_birth_date.strftime('%d de %B de %Y')} " +
+                 "R.U.N.: #{baptism.baptised_nin_for_display} " +
+                 "hijo de #{baptism.father_name_for_display} " +
+                 "y de #{baptism.mother_name_for_display} " +
+                 "Padrinos: #{baptism.godfather_name_for_display} y #{baptism.godmother_name_for_display}."
         end
     end
 
