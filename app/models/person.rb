@@ -6,6 +6,8 @@ class Person < ApplicationRecord
 
   belongs_to :birth_commune, class_name: 'Commune'
 
+  delegate :name, to: :birth_commune, prefix: true
+
   def full_name
     "#{first_name} #{last_name}"
   end
