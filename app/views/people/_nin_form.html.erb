@@ -2,9 +2,9 @@
 <%= hidden_field_tag 'selector', selector %>
 <%= hidden_field_tag 'related_selector', related_selector %>
 <div class="form-group">
-  <%= form.label :national_identification_number, class: 'form-control-label' %>
+  <%= form.label :nin, class: 'form-control-label' %>
   <div class="input-group">
-    <%= form.text_field :national_identification_number, class: 'form-control national-identification-number' %>
+    <%= form.text_field :nin, class: 'form-control national-identification-number' %>
     <div class="input-group-append">
       <%= form.button 'Next', type: 'submit', class: 'btn btn-secondary' %>
     </div>

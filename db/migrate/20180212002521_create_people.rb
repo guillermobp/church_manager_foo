@@ -1,7 +1,7 @@
 class CreatePeople < ActiveRecord::Migration[5.1]
   def change
     create_table :people do |t|
-      t.integer    :national_identification_number
+      t.integer    :nin # National Identification Number
       t.string     :first_name, null: false
       t.string     :last_name, null: false
       t.string     :display_name

@@ -61,7 +61,7 @@ ActiveRecord::Schema.define(version: 2018_04_17_011843) do
   end
 
   create_table "people", force: :cascade do |t|
-    t.integer "national_identification_number"
+    t.integer "nin"
     t.string "first_name", null: false
     t.string "last_name", null: false
     t.string "display_name"

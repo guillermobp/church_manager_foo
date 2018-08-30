@@ -1,6 +1,6 @@
 class Person < ApplicationRecord
-  validates :national_identification_number, presence: true
-  validates :national_identification_number, uniqueness: true
+  validates :nin, presence: true
+  validates :nin, uniqueness: true
   validates :first_name, presence: true
   validates :last_name, presence: true
 
@@ -13,7 +13,7 @@ class Person < ApplicationRecord
   end
 
   def nin_for_display
-    "#{national_identification_number}-#{check_digit}"
+    "#{nin}-#{check_digit}"
   end
 
   def name_for_display
@@ -30,7 +30,7 @@ class Person < ApplicationRecord
       sum = 0
       acc = 2
 
-      national_identification_number.to_s.reverse.each_char do |n|
+      nin.to_s.reverse.each_char do |n|
         acc = 2 if acc == 8
         sum += (n.to_i * acc)
         acc = acc + 1
