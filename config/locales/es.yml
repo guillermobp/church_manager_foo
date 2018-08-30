@@ -1,0 +1,15 @@
+es:
+  new_baptism: 'Nuevo Bautismo'
+  new_first_communion: 'Nueva Primera Comunión'
+  new_confirmation: 'Nueva Confirmación'
+  new_marriage: 'Nuevo Matrimonio'
+
+  find_baptism: 'Buscar Bautismo'
+  find_first_communion: 'Buscar Primera Comunión'
+  find_confirmation: 'Buscar Confirmación'
+  find_marriage: 'Buscar Matrimonio'
+
+  profile: 'Mi Perfil'
+  settings: 'Configuración'
+
+  read_the_docs: 'Documentación'
