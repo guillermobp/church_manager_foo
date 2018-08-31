@@ -1,24 +1,23 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-light mb-3">
   <span class="navbar-brand">Church Manager</span>
   <ul class="navbar-nav mr-auto">
-    <li class="nav-item"><%= link_to 'Home', root_path, { class: 'nav-link' } %></li>
+    <li class="nav-item"><%= link_to t(:home), root_path, { class: 'nav-link' } %></li>
     <li class="nav-item dropdown">
-      <a class="nav-link dropdown-toggle" href="#" id="navbar-dropdown-baptisms" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Baptisms</a>
+      <a class="nav-link dropdown-toggle" href="#" id="navbar-dropdown-baptisms" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><%= t(:baptisms) %></a>
       <div class="dropdown-menu" aria-labelledby="navbar-dropdown-baptisms">
-        <%= link_to 'New Baptism', new_baptism_path, { class: 'dropdown-item' } %>
-        <%= link_to 'Find Baptism', baptisms_path, { class: 'dropdown-item' } %>
-        <%= link_to 'Other Action', new_baptism_path, { class: 'dropdown-item' } %>
+        <%= link_to t(:new_baptism), new_baptism_path, { class: 'dropdown-item' } %>
+        <%= link_to t(:find_baptism), baptisms_path, { class: 'dropdown-item' } %>
       </div>
     </li>
   </ul>
   <ul class="navbar-nav ml-auto">
     <li class="nav-item dropdown">
-      <a class="nav-link dropdown-toggle" href="#" id="navbar-dropdown-account" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Account</a>
+      <a class="nav-link dropdown-toggle" href="#" id="navbar-dropdown-account" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><%= t(:account) %></a>
       <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbar-dropdown-account">
-        <%= link_to 'Profile', church_path, { class: 'dropdown-item' } %>
-        <%= link_to 'Settings', church_path, { class: 'dropdown-item' } %>
+        <%= link_to t(:profile), church_path, { class: 'dropdown-item' } %>
+        <%= link_to t(:settings), church_path, { class: 'dropdown-item' } %>
         <div class="dropdown-divider"></div>
-        <%= link_to 'Log Out', logout_path, { class: 'dropdown-item' } %>
+        <%= link_to t(:log_out), logout_path, { class: 'dropdown-item' } %>
       </div>
     </li>
   </ul>

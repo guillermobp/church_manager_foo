@@ -1,4 +1,8 @@
 es:
+  home: 'Inicio'
+  baptisms: 'Bautismos'
+  account: 'Cuenta'
+
   new_baptism: 'Nuevo Bautismo'
   new_first_communion: 'Nueva Primera Comunión'
   new_confirmation: 'Nueva Confirmación'
@@ -11,5 +15,6 @@ es:
 
   profile: 'Mi Perfil'
   settings: 'Configuración'
+  log_out: 'Cerrar Sesión'
 
   read_the_docs: 'Documentación'
