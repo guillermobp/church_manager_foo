@@ -18,3 +18,56 @@ es:
   log_out: 'Cerrar Sesión'
 
   read_the_docs: 'Documentación'
+
+  first_name: 'Nombre'
+  last_name: 'Apellido'
+  full_name: 'Nombre Completo'
+  display_name: 'Nombre en Pantalla'
+  active: 'Activo'
+
+  helpers:
+    submit:
+      church:
+        create: 'Crear Parroquia'
+        update: 'Actualizar Parroquia'
+      priest:
+        create: 'Crear Sacerdote'
+
+  churches:
+    show:
+      my_church: 'Mi Parroquia'
+      general_info: 'Información General'
+      priests: 'Sacerdotes'
+    update:
+      title: 'Actualización de Datos'
+      text: 'Los datos de la parroquia han sido actualizados exitosamente'
+
+  activerecord:
+    models:
+      baptism: 'Bautismo'
+      church: 'Parroquia'
+    attributes:
+      person:
+        nin: 'R.U.T.'
+        first_name: 'Nombres'
+        last_name: 'Apellidos'
+        display_name: 'Nombre en Pantalla'
+        avatar_url: 'URL del Avatar'
+        birth_date: 'Fecha de Nacimiento'
+        birth_commune: 'Comuna de Nacimiento'
+      baptism:
+        date: 'Fecha'
+        priest: 'Sacerdote'
+        baptised: 'Bautizado'
+        mother: 'Madre'
+        father: 'Padre'
+        godmother: 'Madrina'
+        godfather: 'Padrino'
+      church:
+        name: 'Nombre'
+        manager: 'Encargado'
+        street_name: 'Calle'
+        street_number: 'Número'
+        region: 'Región'
+        province: 'Provincia'
+        commune: 'Comuna'
