@@ -1,29 +1,28 @@
 es:
-  home: 'Inicio'
-  baptisms: 'Bautismos'
-  account: 'Cuenta'
+  general:
 
-  new_baptism: 'Nuevo Bautismo'
-  new_first_communion: 'Nueva Primera Comunión'
-  new_confirmation: 'Nueva Confirmación'
-  new_marriage: 'Nuevo Matrimonio'
+    home: 'Inicio'
+    baptisms: 'Bautismos'
+    account: 'Mi Cuenta'
 
-  find_baptism: 'Buscar Bautismo'
-  find_first_communion: 'Buscar Primera Comunión'
-  find_confirmation: 'Buscar Confirmación'
-  find_marriage: 'Buscar Matrimonio'
+    new_baptism: 'Nuevo Bautismo'
+    new_first_communion: 'Nueva Primera Comunión'
+    new_confirmation: 'Nueva Confirmación'
+    new_marriage: 'Nuevo Matrimonio'
 
-  profile: 'Mi Perfil'
-  settings: 'Configuración'
-  log_out: 'Cerrar Sesión'
+    find_baptism: 'Buscar Bautismo'
+    find_first_communion: 'Buscar Primera Comunión'
+    find_confirmation: 'Buscar Confirmación'
+    find_marriage: 'Buscar Matrimonio'
 
-  read_the_docs: 'Documentación'
+    profile: 'Mi Perfil'
+    settings: 'Configuración'
+    log_out: 'Cerrar Sesión'
 
-  first_name: 'Nombre'
-  last_name: 'Apellido'
-  full_name: 'Nombre Completo'
-  display_name: 'Nombre en Pantalla'
-  active: 'Activo'
+    read_the_docs: 'Documentación'
+
+    view: 'Ver'
+    edit: 'Editar'
 
   helpers:
     submit:
@@ -32,6 +31,8 @@ es:
         update: 'Actualizar Parroquia'
       priest:
         create: 'Crear Sacerdote'
+      baptism:
+        create: 'Registrar Bautismo'
 
   churches:
     show:
@@ -42,6 +43,16 @@ es:
       title: 'Actualización de Datos'
       text: 'Los datos de la parroquia han sido actualizados exitosamente'
 
+  baptisms:
+    show:
+      print: 'Imprimir Certificado'
+    create:
+      title: 'Nuevo Bautismo'
+      text: 'El bautismo ha sido creado exitosamente'
+    update:
+      title: 'Actualizar Bautismo'
+      text: 'El bautismo ha sido actualizado exitosamente'
+
   activerecord:
     models:
       baptism: 'Bautismo'
@@ -49,7 +60,7 @@ es:
     attributes:
       person:
         nin: 'R.U.T.'
-        first_name: 'Nombres'
+        first_name: 'Nombre'
         last_name: 'Apellidos'
         display_name: 'Nombre en Pantalla'
         avatar_url: 'URL del Avatar'
